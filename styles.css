@@ -1642,7 +1642,7 @@ nav.navbar.scrolling .button{
         left: 50% !important;
         transform: translateX(-50%) !important; /* The ONLY way to perfectly center a fixed element */
         width: 95% !important; /* Smaller width for a cleaner "pill" look */
-        max-width: 450px !important;
+        max-width: 500px !important;
         height: 60px !important;
         z-index: 99999 !important;
         border-radius: 50px !important;
@@ -1670,8 +1670,9 @@ nav.navbar.scrolling .button{
     }
 
     nav.navbar.scrolling .button {
-        padding: 10px 25px !important;
+        padding: 8px 16px !important;
         border-radius: 25px !important;
+        font-size: 0.85rem;
     }
 
     /* --- 3. THE MISSION PICTURE (CENTERED) --- */
