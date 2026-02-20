@@ -582,7 +582,7 @@ nav.navbar.scrolling .button{
     justify-content: center; /* Centers horizontally */
     align-items: center;     /* Centers vertically */
     width: 90%; 
-    max-width: 450px;            
+    max-width: 300px;            
     height: auto;
     display: block;
     margin: 0 auto         /* Adds space above and below the image */
