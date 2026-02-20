@@ -11,7 +11,6 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -84,7 +83,7 @@ mix-blend-mode: difference;
     font-size: 1.2 rem;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 9999;
     margin: 0 auto;
     border-radius: 20px;
     padding: 10px;
@@ -109,6 +108,7 @@ nav.navbar.scrolling {
   margin: 0 auto;
   padding: 0%;
   border-radius: 50px;
+  position: sticky;
 }
 
 /* Visibility Fixes */
@@ -138,7 +138,12 @@ nav.navbar.scrolling .navbar__links {
 
 nav.navbar.scrolling .navbar__container {
   max-width: fit-content;
-  padding: 0 5px; 
+  height: auto;
+  min-height: 60px;
+  display: flex;
+  padding: 5 15px; 
+  align-items: center;
+  justify-content: space-between;
   transition: all 0.7s ease-in-out;
 }
 
@@ -347,6 +352,8 @@ nav.navbar.scrolling .button{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
   /* Pulls content up under the transparent navbar */
   margin-top: -80px; 
 }
@@ -359,22 +366,22 @@ nav.navbar.scrolling .button{
   position: relative;
   left: 0;
   background-color: #000; /* Fallback */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #recent__vid {
   /* Use fixed viewport units to force the video to stretch beyond 4x3 */
-  width: 100vw;
-  height: 100dvh;
+  width: 100%;
+  height: 100%;
   
   /* THE FIX: Force the video to crop its edges to fill the container */
   object-fit: cover; 
   
   /* Center the video perfectly */
- object-position: center center;
-  
-  /* Reset any potential max-width constraints */
-  max-width: none !important;
-  max-height: none !important;
+ pointer-events: none;
+ display: block;
 }
 
 /* --- Text Overlays on Video --- */
@@ -575,7 +582,7 @@ nav.navbar.scrolling .button{
     justify-content: center; /* Centers horizontally */
     align-items: center;     /* Centers vertically */
     width: 90%; 
-    max-width: 500px;            
+    max-width: 450px;            
     height: auto;
     display: block;
     margin: 0 auto         /* Adds space above and below the image */
