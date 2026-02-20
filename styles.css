@@ -1641,8 +1641,8 @@ nav.navbar.scrolling .button{
         top: 20px !important;
         left: 50% !important;
         transform: translateX(-50%) !important; /* The ONLY way to perfectly center a fixed element */
-        width: 90% !important; /* Smaller width for a cleaner "pill" look */
-        max-width: 400px !important;
+        width: 95% !important; /* Smaller width for a cleaner "pill" look */
+        max-width: 450px !important;
         height: 60px !important;
         z-index: 99999 !important;
         border-radius: 50px !important;
