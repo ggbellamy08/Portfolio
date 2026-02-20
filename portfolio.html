@@ -184,7 +184,6 @@
       // Apply to cards and set the staggered delay
       document.querySelectorAll('.portfolio__card').forEach((card, index) => {
         // We use transitionDelay instead of animationDelay so it doesn't fight the hover
-        card.style.transitionDelay = `${index * 0.15}s`; 
         observer.observe(card);
       });
     </script>
