@@ -836,6 +836,9 @@ nav.navbar.scrolling .button{
 .portfolio__card:nth-child(2):hover { background-color: #dbe65f; }
 .portfolio__card:nth-child(3):hover { background-color: #f57878; }
 .portfolio__card:nth-child(4):hover { background-color: #78f5ad; }
+.portfolio__card:nth-child(5):hover { background-color: #d978f5; }
+.portfolio__card:nth-child(6):hover { background-color: #f59978; }
+
 
 /* Responsive Breakpoints */
 
@@ -867,6 +870,8 @@ nav.navbar.scrolling .button{
   .portfolio__card:nth-child(2) { background-color: #dbe65f; }
   .portfolio__card:nth-child(3) { background-color: #f57878; }
   .portfolio__card:nth-child(4) { background-color: #78f5ad; }
+  .portfolio__card:nth-child(5) { background-color: #d978f5; }
+  .portfolio__card:nth-child(6) { background-color: #f59978; }
 
   /* Disable any further hover transformations to prevent 'sticky' taps */
   .portfolio__card.appear:hover {
@@ -1361,6 +1366,8 @@ nav.navbar.scrolling .button{
 .found__card:nth-child(2):hover { background-color: #dbe65f; }
 .found__card:nth-child(3):hover { background-color: #f57878; }
 .found__card:nth-child(4):hover { background-color: #78f5ad; }
+.found__card:nth-child(5):hover { background-color: #d978f5; }
+.found__card:nth-child(6):hover { background-color: #f59978; }
 
 .found__card h2 {
   margin: 15px 0 5px 10px;
@@ -1442,6 +1449,8 @@ nav.navbar.scrolling .button{
   .found__card:nth-child(2) { background-color: #dbe65f; }
   .found__card:nth-child(3) { background-color: #f57878; }
   .found__card:nth-child(4) { background-color: #78f5ad; }
+  .found__card:nth-child(5) { background-color: #d978f5; }
+  .found__card:nth-child(6) { background-color: #f59978; }
 
   /* Disable any further hover transformations to prevent 'sticky' taps */
   .found__card.appear:hover {

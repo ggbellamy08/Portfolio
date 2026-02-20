@@ -54,6 +54,15 @@
           kept happening. I like to think they tell the story behind the story.</p>
         
         <div class="found__container">
+          <div class="found__card">
+           <div class="found__card__videocontainer">
+            <video id="campaign_tease" autoplay muted loop playsinline src="Content/Found 5.mp4" type="video/mp4"></video>
+        </div>
+          <h2>Found Moments 5</h2>
+          <a href="https://www.instagram.com/p/DUtRcWFjiGr/" target="_blank" class="card__button">
+            Watch
+          </a>
+        </div>
          <div class="found__card">
            <div class="found__card__videocontainer">
             <video id="campaign_tease" autoplay muted loop playsinline src="Content/Found4.mp4" type="video/mp4"></video>
@@ -176,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.found__card').forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.15}s`;
         cardObserver.observe(card);
     });
 });
