@@ -99,8 +99,8 @@ nav.navbar.scrolling {
   box-shadow: 0 4px 8px rgba(130, 130, 130, 0.4) ;
   
   /* Reset the 60% width that was causing visual confusion */
-  width: 450px ; 
-  max-width: 90%;
+  width: 90% ; 
+  max-width: 450px;
   margin: 0 auto;
   padding: 0%;
   border-radius: 50px;
@@ -352,16 +352,13 @@ nav.navbar.scrolling .button{
 #recent__vid {
   /* Use fixed viewport units to force the video to stretch beyond 4x3 */
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   
   /* THE FIX: Force the video to crop its edges to fill the container */
   object-fit: cover; 
   
   /* Center the video perfectly */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+ object-position: center center;
   
   /* Reset any potential max-width constraints */
   max-width: none !important;
@@ -814,7 +811,7 @@ nav.navbar.scrolling .button{
 /* Video Container Fix */
 .portfolio__card__videocontainer {
   position: relative;
-  padding-top: 56.25%; /* Forces 16:9 Aspect Ratio */
+  aspect-ratio: 16/9;
   width: 100%;
   overflow: hidden;
   margin: 15px 0;
@@ -905,7 +902,8 @@ nav.navbar.scrolling .button{
 
 /* Replace your individual section h1 styles with this */
 .section-header {
-  font-size: clamp(3rem, 12vw, 10rem); /* Responsive: Min 3rem, Max 10rem */
+  font-size: clamp(2rem, 10vw, 8rem); /* Responsive: Min 3rem, Max 10rem */
+  word-wrap: break-word;
   text-align: center;
   line-height: 1;
   color: #fff;
@@ -1591,6 +1589,13 @@ nav.navbar.scrolling .button{
 }
 
 
-
+@media screen and (max-width: 768px) {
+    * {
+        cursor: auto !important;
+    }
+    .custom_cursor {
+        display: none !important;
+    }
+}
 
 
