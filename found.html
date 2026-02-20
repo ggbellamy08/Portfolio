@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Griffin Bellamy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="custom_cursor"></div> 
+
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/index.html" id="navbar__logo">
+    <img src="Content/Select7.png" alt="Logo" class="navbar__logo-img">
+    <span class="logo-text">Found Creative Media</span>
+</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/index.html" class="navbar__linksI"> Home </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/portfolio.html" class="navbar__linksP"> Portfolio </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/about.html" class="navbar__linksA"> About </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/found.html" class="navbar__linksF"> Found Moments </a>
+                </li>
+                 <li class="navbar__btn">
+                    <a href="/contact.html" class="button"> Connect </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+   
+
+   <div class="found">
+      <h1 class="section-header">Found Moments</h1>
+         <p class="found-description"> Making these "Found Moments" videos has quickly become one of my <span class="highlightF">favorite parts</span> 
+          of this whole video thing. They originated from <span class="highlightF">extra footage</span> I couldn't use in other projects, but going 
+          through it, I felt these moments <span class="highlightF">needed to be shared.</span> Once I made the first compilation, they just kind of 
+          kept happening. I like to think they tell the story behind the story.</p>
+        
+        <div class="found__container">
+         <div class="found__card">
+           <div class="found__card__videocontainer">
+            <video id="campaign_tease" autoplay muted loop playsinline src="Content/Found4.mp4" type="video/mp4"></video>
+        </div>
+          <h2>Found Moments 4</h2>
+          <a href="https://www.instagram.com/p/DTGJViijmud/?next=%2F" target="_blank" class="card__button">
+            Watch
+          </a>
+        </div>
+
+        <div class="found__card">
+          <div class="found__card__videocontainer">
+            <video id="dumb_song_tease" autoplay muted loop playsinline src="Content/Found3.mp4" type="video/mp4"></video>
+        </div>
+          <h2>Found Moments 3</h2>
+          <a href="https://www.instagram.com/p/DSh51y-AdvS/?next=%2F" target="_blank" class="card__button">
+            Watch
+          </a>
+        </div>
+
+        <div class="found__card">
+          <div class="found__card__videocontainer">
+            <video id="dumb_song_tease_2" autoplay muted loop playsinline src="Content/Found2.mp4" type="video/mp4"></video>
+        </div>
+          <h2>Found Moments 2</h2>
+          <a href="https://www.instagram.com/p/DP9zi2zDelK/?next=%2F" target="_blank" class="card__button">
+            Watch
+          </a>
+        </div>
+
+        <div class="found__card">
+            <div class="found__card__videocontainer">
+            <video id="huskerthon25_tease" autoplay muted loop playsinline src="Content/Found1.mp4" type="video/mp4"></video>
+        </div>
+          <h2>Found Moments 1</h2>
+          <a href="https://www.instagram.com/p/DPaCSUwDDRm/?next=%2F" target="_blank" class="card__button">
+            Watch
+          </a>
+        </div>
+    </div> 
+</div>
+
+        <div class="footer__container">
+      <div class="footer__links">
+        
+        <div class="footer__link--wrapper">
+          <div class="footer__link--items">
+            <a href="/about.html">About</a>
+          </div>
+          <div class="footer__link--items">
+            <a href="/portfolio.html">Portfolio</a>
+          </div>
+          <div class="footer__link--items">
+            <a href="/contact.html">Contact</a>
+          </div>
+        </div> 
+      
+      </div> <section class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo"><i class="fas fa-gem"></i>Found Creative Media</a>
+          </div>
+          <p class="website__rights">© Found Creative Media 2026. All rights reserved</p>
+          
+          <div class="social__icons">
+            <a
+              class="social__icon--link"
+              href="https://www.instagram.com/griff.found.a.camera/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <img src="Content/instagram-white-icon.webp"
+              alt="Instagram Icon"
+              class="instagram-icon-style" >
+            </a>
+            
+            <a
+              class="social__icon--link"
+              href="https://www.youtube.com/@CasualDorkGriff"
+              target="_blank"
+              aria-label="Youtube"
+            >
+              <img src="Content/youtube-app-white-icon.webp"
+              alt="YouTube Icon"
+              class="youtube-icon-style" >
+            </a>
+          </div> </div> </section> </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Highlight Observer
+    const highlightObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.highlightF').forEach(el => highlightObserver.observe(el));
+
+    // 2. Cursor
+    const cursor = document.querySelector('.custom_cursor'); 
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate(${e.clientX - 7.5}px, ${e.clientY - 7.5}px)`; 
+    });
+
+    // 3. Navbar
+    const navbar = document.querySelector('.navbar'); 
+    window.addEventListener("scroll", () => {
+        if (navbar && window.scrollY > 36) navbar.classList.add("scrolling");
+        else if (navbar) navbar.classList.remove("scrolling");
+    });
+
+    // 4. Staggered Appear (The only new class logic)
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.found__card').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.15}s`;
+        cardObserver.observe(card);
+    });
+});
+</script>
+
+</body>
+</html>

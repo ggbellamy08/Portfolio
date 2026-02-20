@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Connect Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="custom_cursor"></div> 
+
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/index.html" id="navbar__logo">
+    <img src="Content/Select7.png" alt="Logo" class="navbar__logo-img">
+    <span class="logo-text">Found Creative Media</span>
+</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/index.html" class="navbar__linksI"> Home </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/portfolio.html" class="navbar__linksP"> Portfolio </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/about.html" class="navbar__linksA"> About </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/found.html" class="navbar__linksF"> Found Moments </a>
+                </li>
+                 <li class="navbar__btn">
+                    <a href="/contact.html" class="button"> Connect </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="Contact">
+      <h1 class="section-header">Connect</h1>
+    <div class="contact__container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact__left">
+            <div class="contact__left__title">
+                <h2>Let's Work Together</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="2ac66c3b-064e-4d15-a3a8-88373909e06e">
+            <input type="text" name="name" placeholder="Your Name" class="contact__inputs" required>
+             <input type="email" name="email" placeholder="Your Email" class="contact__inputs" required>
+             <textarea name="message" placeholder="Your Message" class="contact__inputs" required></textarea>
+             <button type="submit">Submit</button>
+        </form>
+        <div class="contact__right">
+            <img src="Content/Select11.JPG" alt="contact pic">
+        </div>
+
+</div> </div>     <div class="footer__container">
+      <div class="footer__links">
+        
+        <div class="footer__link--wrapper">
+          <div class="footer__link--items">
+            <a href="/about.html">About</a>
+          </div>
+          <div class="footer__link--items">
+            <a href="/portfolio.html">Portfolio</a>
+          </div>
+          <div class="footer__link--items">
+            <a href="/contact.html">Contact</a>
+          </div>
+        </div> 
+      
+      </div> <section class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo"><i class="fas fa-gem"></i>Found Creative Media</a>
+          </div>
+          <p class="website__rights">© Found Creative Media 2026. All rights reserved</p>
+          
+          <div class="social__icons">
+            <a
+              class="social__icon--link"
+              href="https://www.instagram.com/griff.found.a.camera/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <img src="Content/instagram-white-icon.webp"
+              alt="Instagram Icon"
+              class="instagram-icon-style" >
+            </a>
+            
+            <a
+              class="social__icon--link"
+              href="https://www.youtube.com/@CasualDorkGriff"
+              target="_blank"
+              aria-label="Youtube"
+            >
+              <img src="Content/youtube-app-white-icon.webp"
+              alt="YouTube Icon"
+              class="youtube-icon-style" >
+            </a>
+          </div> </div> </section> </div> <script>
+      const cursor = document.querySelector('.custom_cursor'); 
+
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`; 
+      });
+    </script>
+    
+    <script>
+      const navbar = document.querySelector('.navbar'); 
+      const scrollThreshold = 36; 
+
+      if (navbar) {
+          window.addEventListener("scroll", () => {
+              if (window.scrollY > scrollThreshold) {
+                  navbar.classList.add("scrolling");
+              } else {
+                  navbar.classList.remove("scrolling");
+              }
+          });
+      }
+    </script>
+    
+    <script src="app.js"></script>
+
+</body>
+</html>

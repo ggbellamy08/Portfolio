@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Griffin Bellamy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     
+    <div class="custom_cursor"></div> 
+
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/index.html" id="navbar__logo">
+    <img src="Content/Select7.png" alt="Logo" class="navbar__logo-img">
+    <span class="logo-text">Found Creative Media</span>
+</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/index.html" class="navbar__linksI"> Home </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/portfolio.html" class="navbar__linksP"> Portfolio </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/about.html" class="navbar__linksA"> About </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/found.html" class="navbar__linksF"> Found Moments </a>
+                </li>
+                 <li class="navbar__btn">
+                    <a href="/contact.html" class="button"> Connect </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+   
+
+<div class="portfolio">
+  <h1 class="section-header">Selected Work</h1>
+  <div class="portfolio__container">
+    
+    <div class="portfolio__card">
+      <div class="portfolio__card__videocontainer">
+        <video id="campaign_tease" autoplay muted loop src="Content/CampaignWebTease.mp4" type="video/mp4"></video>
+      </div>
+      <h2>The Power of One</h2>
+      <p>Brand Video</p>
+      <a href="https://youtu.be/AXMMJG1UlQg?si=qLKjTRKTlmk9DwMX" target="_blank" class="card__button">Watch</a>
+    </div>
+
+    <div class="portfolio__card">
+      <div class="portfolio__card__videocontainer">
+        <video id="dumb_song_tease" autoplay muted loop src="Content/DumbSongWebTease.mp4" type="video/mp4"></video>
+      </div>
+      <h2>The Dumb Song</h2>
+      <p>Passion Project</p>
+      <a href="https://youtu.be/gQ6873avgsU?si=tSkvKuMF578wXhsm" target="_blank" class="card__button">Watch</a>
+    </div>
+
+    <div class="portfolio__card">
+      <div class="portfolio__card__videocontainer">
+        <video id="pickletease" autoplay muted loop src="Content/PickleTease.mp4" type="video/mp4"></video>
+      </div>
+      <h2>Pickle Ball Tournament</h2>
+      <p>Event Video</p>
+      <a href="https://www.instagram.com/p/DPW94W3Efq7/" target="_blank" class="card__button">Watch</a>
+    </div>
+
+    <div class="portfolio__card">
+      <div class="portfolio__card__videocontainer">
+        <video id="huskerthon25_tease" autoplay muted loop src="Content/HuskerThon25WebTease.mp4" type="video/mp4"></video>
+      </div>
+      <h2>HuskerThon 2025</h2>
+      <p>Event Video</p>
+      <a href="https://youtu.be/99M_AZB2XdA?si=SUyRDeo0Oe2P3Qwr" target="_blank" class="card__button">Watch</a>
+    </div>
+
+  </div> </div>
+
+
+       
+
+        <div class="footer__container">
+      <div class="footer__links">
+        
+        <div class="footer__link--wrapper">
+          <div class="footer__link--items">
+            <a href="/about.html">About</a>
+          </div>
+          <div class="footer__link--items">
+            <a href="/portfolio.html">Portfolio</a>
+          </div>
+          <div class="footer__link--items">
+            <a href="/contact.html">Contact</a>
+          </div>
+        </div> 
+      
+      </div> <section class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo"><i class="fas fa-gem"></i>Found Creative Media</a>
+          </div>
+          <p class="website__rights">© Found Creative Media 2026. All rights reserved</p>
+          
+          <div class="social__icons">
+            <a
+              class="social__icon--link"
+              href="https://www.instagram.com/griff.found.a.camera/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <img src="Content/instagram-white-icon.webp"
+              alt="Instagram Icon"
+              class="instagram-icon-style" >
+            </a>
+            
+            <a
+              class="social__icon--link"
+              href="https://www.youtube.com/@CasualDorkGriff"
+              target="_blank"
+              aria-label="Youtube"
+            >
+              <img src="Content/youtube-app-white-icon.webp"
+              alt="YouTube Icon"
+              class="youtube-icon-style" >
+            </a>
+          </div> </div> </section> </div> <script>
+      // 1. Custom Cursor Logic
+      const cursor = document.querySelector('.custom_cursor'); 
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate(${e.clientX - 7.5}px, ${e.clientY - 7.5}px)`;
+      });
+
+      // 2. Navbar Scroll Effect
+      const navbar = document.querySelector('.navbar'); 
+      const scrollThreshold = 36; 
+      if (navbar) {
+          window.addEventListener("scroll", () => {
+              if (window.scrollY > scrollThreshold) {
+                  navbar.classList.add("scrolling");
+              } else {
+                  navbar.classList.remove("scrolling");
+              }
+          });
+      }
+
+      // 3. Mobile Menu Toggle Logic
+      const menu = document.querySelector('#mobile-menu');
+      const menuLinks = document.querySelector('.navbar__menu');
+      if (menu) {
+          menu.addEventListener('click', function() {
+              menu.classList.toggle('is-active');
+              menuLinks.classList.toggle('active');
+          });
+      }
+
+      // 4. Staggered Portfolio Fade-In (Transition-based to allow Hover)
+      const observerOptions = {
+        threshold: 0.1 
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Adding 'appear' triggers the CSS transitions
+            entry.target.classList.add('appear');
+            // Once it appears, stop observing to save performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Apply to cards and set the staggered delay
+      document.querySelectorAll('.portfolio__card').forEach((card, index) => {
+        // We use transitionDelay instead of animationDelay so it doesn't fight the hover
+        card.style.transitionDelay = `${index * 0.15}s`; 
+        observer.observe(card);
+      });
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

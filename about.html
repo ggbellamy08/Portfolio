@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Griffin Bellamy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="custom_cursor"></div> 
+
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/index.html" id="navbar__logo">
+    <img src="Content/Select7.png" alt="Logo" class="navbar__logo-img">
+    <span class="logo-text">Found Creative Media</span>
+</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/index.html" class="navbar__linksI"> Home </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/portfolio.html" class="navbar__linksP"> Portfolio </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/about.html" class="navbar__linksA"> About </a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="/found.html" class="navbar__linksF"> Found Moments </a>
+                </li>
+                 <li class="navbar__btn">
+                    <a href="/contact.html" class="button"> Connect </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+<div class="about__container">
+    <div class="about__content">
+        <h1 class="section-header">About Griff</h1>
+        
+        <div class="text-wrap-container">
+            <div class="picture__container">
+                <img src="Content/Select1.5.jpeg" alt="about__pic">
+            </div>
+            
+            <div class="paragraph__text">
+                <p>
+                    Hey! I’m Griff. <span class="highlight">I love hats, cameras, and doing new things.</span> 
+                    My video journey started in the dorms of the University of Nebraska
+                    making skits with my roommates. <span class="highlight">Since then, I’ve been working 
+                    with brands in Lincoln while also saving time for some personal projects!</span> 
+                    Outside of video, I’m pursuing a master’s degree in Educational 
+                    Psychology and also help coach cross country at a high school in town! 
+                </p>
+                <h1>My Process</h1>
+                <p>
+                    Before I start any project with a brand, <span class="highlight">I want to get to know you!</span> 
+                    I want to know your story inside and out so I can share it with a larger audience.
+                    This most often has taken the form of a consultation where we discuss ideas,
+                    however I would love to immerse myself in your world however you see fit! 
+                    When I have an idea of how best to tell your story, I get to work on making shot
+                    lists, story boards, and whatever else comes to mind. Once we’re both excited 
+                    about our concept, all that’s left to do is start shooting! After the shoot,
+                    I always give a preview of a project to get feedback. <span class="highlight">I believe collaboration
+                    is not only fun, but essential in video work.</span> After all it is your
+                    project as much as mine! I’ll make the desired changes and then you’ll 
+                    receive the final product. After that, I’ll look forward to the next time 
+                    we work together!
+                </p>
+                <h1>My Ideal Client</h1>
+                <p>
+                    My dream client is <span class="highlight">someone who is passionate about what they do.</span>
+                     Whether it be a business, organization, project, or hobby, I love working with people who are excited 
+                    about things. <span class="highlight">Not only does it make for a fun time, it makes my job easier.</span>
+                     Without a doubt, audiences can feel genuine passion and latch on whenever it's present. Additionally,
+                    your passion will spark new ideas that I may have never considered. There's nothing more
+                    satisfying than thinking of a new angle to approach a project in a client meeting. <span class="highlight">If 
+                    this sounds like you, then don't hesitate to reach out!</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  const cursor = document.querySelector('.custom_cursor'); 
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`; 
+  });
+</script>
+
+
+
+<script src="app.js"></script>
+
+<script>
+  const highlightObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.highlight').forEach((span) => {
+    highlightObserver.observe(span);
+  });
+</script>
+
+  <div class="footer__container">
+      <div class="footer__links">
+        
+        <div class="footer__link--wrapper">
+          <div class="footer__link--items">
+            <a href="/about.html">About</a>
+          </div>
+          <div class="footer__link--items">
+            <a href="/portfolio.html">Portfolio</a>
+          </div>
+          <div class="footer__link--items">
+            <a href="/contact.html">Contact</a>
+          </div>
+        </div> 
+      
+      </div> <section class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo"><i class="fas fa-gem"></i>Found Creative Media</a>
+          </div>
+          <p class="website__rights">© Found Creative Media 2026. All rights reserved</p>
+          
+          <div class="social__icons">
+            <a
+              class="social__icon--link"
+              href="https://www.instagram.com/griff.found.a.camera/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <img src="Content/instagram-white-icon.webp"
+              alt="Instagram Icon"
+              class="instagram-icon-style" >
+            </a>
+            
+            <a
+              class="social__icon--link"
+              href="https://www.youtube.com/@CasualDorkGriff"
+              target="_blank"
+              aria-label="Youtube"
+            >
+              <img src="Content/youtube-app-white-icon.webp"
+              alt="YouTube Icon"
+              class="youtube-icon-style" >
+            </a>
+          </div> </div> </section> </div> 
+    
+    <script>
+      const navbar = document.querySelector('.navbar'); 
+      const scrollThreshold = 1; 
+
+      if (navbar) {
+          window.addEventListener("scroll", () => {
+              if (window.scrollY > scrollThreshold) {
+                  navbar.classList.add("scrolling");
+              } else {
+                  navbar.classList.remove("scrolling");
+              }
+          });
+      }
+    </script>
+    
+    <script src="app.js"></script>
+
+</body>
+</html>

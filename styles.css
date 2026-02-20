@@ -1,0 +1,1587 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue',sans-serif;
+    font-weight: 400;
+    cursor: none;
+}
+html, body {
+  background-color: #141414;
+}
+
+body {
+  margin: 0;
+  padding: 0%;
+  overflow-x: hidden;
+}
+.custom_cursor{
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+
+mix-blend-mode: difference;
+
+  transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.custom-cursor.grow {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid white;
+
+  mix-blend-mode: difference;
+}
+
+.highlight {
+  background-image: linear-gradient(to right, #49bee8, #49bee8); /* Your highlight color */
+  background-repeat: no-repeat;
+  background-size: 0% 100%; /* Start at 0% width (hidden) */
+  transition: background-size 2s ease-in-out, color 2s ease-in-out;
+  display: inline;
+  color: #fff;
+}
+
+/* This class is added by JavaScript when the word enters the screen */
+.highlight.active {
+  background-size: 100% 100%;
+  color: #000;
+}
+
+.highlightF {
+  background-image: linear-gradient(to right, #dbe65f, #dbe65f); /* Your highlight color */
+  background-repeat: no-repeat;
+  background-size: 0% 100%; /* Start at 0% width (hidden) */
+  transition: background-size 2s ease-in-out, color 2s ease-in-out;
+  display: inline;
+  color: #fff;
+}
+
+/* This class is added by JavaScript when the word enters the screen */
+.highlightF.active {
+  background-size: 100% 100%;
+  color: #000;
+}
+
+.navbar {
+    background: transparent;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2 rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 10px;
+    transition: all 0.7s ease-in-out, width 0.7s ease-in-out, max-width 0.7s ease-in-out;
+}
+
+/* Use a highly specific selector to overcome any conflicts */
+/* Guaranteed Visual Change on Scroll */
+nav.navbar.scrolling {
+  /* 1. Make the background opaque and a different color */
+  background-color: rgba(38, 37, 37, 0.464) ; 
+  
+  /* 2. Shrink the height to confirm the transition is working */
+  height: 60px ;
+
+  /* 3. Add a clear shadow */
+  box-shadow: 0 4px 8px rgba(130, 130, 130, 0.4) ;
+  
+  /* Reset the 60% width that was causing visual confusion */
+  width: 450px ; 
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0%;
+  border-radius: 50px;
+}
+
+/* Visibility Fixes */
+nav.navbar.scrolling #navbar__logo {
+    /* Logo should still be visible on the red background */
+    background-image: none ;
+    -webkit-text-fill-color: #fff ;
+    -moz-text-fill-color: #fff ;
+}
+
+nav.navbar.scrolling .navbar__links {
+  /* Ensure links are white on the new red background */
+  color: #fff ; 
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+
+nav.navbar.scrolling .navbar__container {
+  max-width: fit-content;
+  padding: 0 5px; 
+  transition: all 0.7s ease-in-out;
+}
+
+#navbar__logo {
+    background-color: #fff;
+    background-image: linear-gradient(to top, #fff 0%, #fff 100%);
+    background-size: 100%;
+    background-clip: initial;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: none;
+    text-decoration: none;
+    font-size: 2rem;
+    gap: 20px;
+    transition: gap 0.7s ease;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.fa-gem {
+    margin-right: 0.5rem;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    width: auto;
+}
+
+.navbar__items {
+    height: 80px;
+}
+
+.navbar__linksI{
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+padding: 0 1rem;
+height: 100%;
+}
+
+.navbar__linksA{
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+padding: 0 1rem;
+height: 100%;
+}
+
+.navbar__linksP{
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+padding: 0 1rem;
+height: 100%;
+}
+
+.navbar__linksF{
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+padding: 0 1rem;
+height: 100%;
+}
+
+.navbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0%;
+    width: auto;
+    padding-left: 10px;
+}
+
+nav.navbar.scrolling .button{
+  border-radius: 15px;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #000000;
+    color: #fff;
+    transition: all 0.7s ease-in-out;
+    white-space: nowrap;
+    width: 100%;
+}
+.button:hover {
+  background: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.navbar__linksI:hover {
+  color: #78f5ad;
+  transition: all 0.3s ease;
+}
+
+.navbar__linksP:hover {
+  color: #f57878;
+  transition: all 0.3s ease;
+}
+
+.navbar__linksA:hover {
+  color: #49bee8;
+  transition: all 0.3s ease;
+}
+
+.navbar__linksF:hover {
+  color: #dbe65f;
+  transition: all 0.3s ease;
+}
+
+/* Ensure the image doesn't shrink */
+.navbar__logo-img {
+    height: 55px; 
+    width: 55px;
+    min-width: 55px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid white;
+    display: block;
+}
+
+.logo-text {
+    font-size: 2rem;
+    color: #fff !important;
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 1;
+    display: block;
+    transition: 
+        opacity 0.7s ease, 
+        max-width 0.7s ease, 
+        visibility 0.7s;
+    opacity: 1;
+    visibility: visible;
+    max-width: 500px;
+}
+
+.navbar.scrolling .logo-text {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none;
+    max-width: 0;         /* Shrinks the horizontal space */
+    margin: 0;            /* Removes any lingering margins */
+    overflow: hidden;     /* Prevents text from spilling out while shrinking */
+    white-space: nowrap;  /* Prevents text from wrapping during the shrink */
+    transition: 
+        opacity 0.7s ease, 
+        max-width 0.7s ease, 
+        visibility 0.7s;
+}
+
+.navbar.scrolling #navbar__logo {
+    gap: 0px !important;
+    transition: gap 0.7s ease;
+}
+
+/* Mobile Fix: Hide links/button on small screens UNLESS scrolling */
+@media screen and (max-width: 768px) {
+    /* Target the menu and button only when .scrolling is NOT present */
+    .navbar:not(.scrolling) .navbar__menu, 
+    .navbar:not(.scrolling) .navbar__btn {
+        display: none;
+    }
+
+    /* Ensure the container centers the logo when everything else is hidden */
+    .navbar:not(.scrolling) .navbar__container {
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+
+/* Main Content CSS */
+/* --- Main Content Base --- */
+.main {
+  background-color: #141414;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* Pulls content up under the transparent navbar */
+  margin-top: -80px; 
+}
+
+/* --- The Video Section (Full Screen) --- */
+.recent_vid--container {
+  width: 100%;
+  height: 100vh; /* Standard desktop height */
+  position: relative;
+  overflow: hidden;
+  background-color: #000; /* Fallback */
+}
+
+#recent__vid {
+  /* Use fixed viewport units to force the video to stretch beyond 4x3 */
+  width: 100vw;
+  height: 100vh;
+  
+  /* THE FIX: Force the video to crop its edges to fill the container */
+  object-fit: cover; 
+  
+  /* Center the video perfectly */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Reset any potential max-width constraints */
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* --- Text Overlays on Video --- */
+/* RESPONSIVE TEXT OVERLAY */
+.recent_vid--container h1 {
+  position: absolute;
+  bottom: 12%; /* Anchor the H1 */
+  left: 5%;
+  z-index: 10;
+  font-size: clamp(3rem, 15vw, 9rem);
+  line-height: 0.8; /* Shrinks the invisible space above/below the letters */
+  color: #fff;
+  margin: 0; /* Ensures no extra browser margin is pushing them apart */
+}
+
+.recent_vid--container h2 {
+  position: absolute;
+  bottom: 8%; /* Put this just 4% below the H1 anchor */
+  left: 5%;
+  z-index: 10;
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Mobile Specific Tweaks --- */
+@media screen and (max-width: 768px) {
+  .recent_vid--container {
+    /* Use dvh to prevent mobile browser bars from cutting off the video */
+    height: 100dvh; 
+  }
+
+  #recent__vid {
+    height: 100dvh;
+  }
+  
+  .recent_vid--container h1 {
+    bottom: 20%; 
+  }
+  
+  .recent_vid--container h2 {
+    bottom: 15%;
+  }
+}
+
+
+.mission {
+    font-size: 1 rem;
+    line-height: 1.8;
+    color: #fff;
+    align-items: center;
+}
+
+.skills_container{
+  margin: 20px;
+}
+
+.services {
+    font-size: 1 rem;
+    line-height: 1.8;
+    color: #fff
+}
+
+.testimonials {
+    font-size: 1 rem;
+    line-height: 1.8;
+    color: #fff;
+    align-items: center;
+}
+
+/* Ensure the groups sit side-by-side */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    user-select: none;
+}
+
+.group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 100%; /* Ensures the group spans the container width */
+    animation: scroll 20s linear infinite;
+}
+
+.card {
+    background: #181818;
+    margin: 0 20px;
+    padding: 20px;
+    border-radius: 12px;
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Universal Logo Styling */
+.logo_container img {
+    max-width: 100%;
+    max-height: 400px; /* Limits height so they all look uniform */
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Makes all logos white for a clean look */
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+/* Pause the animation on hover (Optional but recommended) */
+.carousel:hover .group {
+    animation-play-state: paused;
+}
+
+.adapt_logo_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adapt_logo_container img {
+    /* This is the key: it scales the logo to fit the card */
+    max-width: 80%; 
+    max-height: 80%;
+    object-fit: contain; /* Keeps the logo's proportions perfect */
+}
+
+.DM_logo_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DM_logo_container img {
+    /* This is the key: it scales the logo to fit the card */
+    max-width: 80%; 
+    max-height: 80%;
+    object-fit: contain; /* Keeps the logo's proportions perfect */
+}
+
+.OhHello_logo_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.OhHello_logo_container img {
+    /* This is the key: it scales the logo to fit the card */
+    max-width: 80%; 
+    max-height: 80%;
+    object-fit: contain; /* Keeps the logo's proportions perfect */
+}
+
+.DE_logo_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DE_logo_container img {
+    /* This is the key: it scales the logo to fit the card */
+    max-width: 80%; 
+    max-height: 80%;
+    object-fit: contain; /* Keeps the logo's proportions perfect */
+}
+
+.Lotus_logo_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Lotus_logo_container img {
+    /* This is the key: it scales the logo to fit the card */
+    max-width: 80%; 
+    max-height: 80%;
+    object-fit: contain; /* Keeps the logo's proportions perfect */
+}
+
+/* 1. Center the container itself */
+.mission_pic_container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    width: 100%;             /* Ensures it spans the whole page */
+    margin: 40px 0;          /* Adds space above and below the image */
+}
+
+/* 2. Control the image size */
+.mission_pic_container img {
+    max-width: 500px;            /* Set your desired size here */
+    height: auto;
+    border-radius: 20px;     /* Optional: matches your navbar style */
+}
+
+/* 3. Center the mission text below it */
+.mission h1 {
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   SERVICES SECTION - FULL REWRITE
+   ========================================= */
+
+.services {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+}
+
+.section-title h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* --- The Base Card --- */
+.service-card {
+    background: #181818;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; /* Default text color */
+    
+    /* Animation: Initial State */
+    opacity: 0;
+    transform: translateY(30px);
+    
+    /* SYNCED TRANSITIONS: All properties move at the same speed */
+    transition: transform 0.3s ease-in-out, 
+                opacity 0.3s ease-in-out, 
+                background-color 0.3s ease-in-out, 
+                color 0.3s ease-in-out;
+}
+
+/* --- Appear State (Triggered by JS) --- */
+.service-card.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Hover Logic (Desktop) --- */
+.service-card.appear:hover {
+    transform: translateY(-10px) scale(1.05);
+    color: #000; /* Force all text to black on hover */
+}
+
+/* Specific background colors on hover */
+.service-card:nth-child(1):hover { background-color: #49bee8; }
+.service-card:nth-child(2):hover { background-color: #dbe65f; }
+.service-card:nth-child(3):hover { background-color: #f57878; }
+.service-card:nth-child(4):hover { background-color: #78f5ad; }
+.service-card:nth-child(5):hover { background-color: #d978f5; }
+.service-card:nth-child(6):hover { background-color: #f59978; }
+
+/* Ensure children inherit the color change */
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover .icon {
+    color: #000;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.service-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #666; /* Grey text that fades to black on hover */
+    transition: color 0.3s ease-in-out;
+}
+
+/* --- Button Styling --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: auto;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Individual Button Colors */
+.service-card:nth-child(1) .btn { background-color: #49bee8; }
+.service-card:nth-child(2) .btn { background-color: #dbe65f; }
+.service-card:nth-child(3) .btn { background-color: #f57878; }
+.service-card:nth-child(4) .btn { background-color: #78f5ad; }
+.service-card:nth-child(5) .btn { background-color: #d978f5; }
+.service-card:nth-child(6) .btn { background-color: #f59978; }
+
+/* Button becomes white/black when the CARD is hovered */
+.service-card:hover .btn {
+    background-color: #fff;
+    color: #000;
+}
+
+/* =========================================
+   MOBILE VIEW (768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .service-card {
+    width: 100%;
+    margin: 1rem 0;
+    opacity: 0; /* Still starts hidden */
+  }
+
+  /* "Appear" state on mobile acts as the "Hovered" state */
+  .service-card.appear {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02); 
+    color: #000;
+  }
+
+  /* Force background colors and text colors on mobile scroll-in */
+  .service-card.appear:nth-child(1) { background-color: #49bee8; }
+  .service-card.appear:nth-child(2) { background-color: #dbe65f; }
+  .service-card.appear:nth-child(3) { background-color: #f57878; }
+  .service-card.appear:nth-child(4) { background-color: #78f5ad; }
+  .service-card.appear:nth-child(5) { background-color: #d978f5; }
+  .service-card.appear:nth-child(6) { background-color: #f59978; }
+
+  .service-card.appear h3, 
+  .service-card.appear p {
+    color: #000;
+  }
+
+  .service-card.appear .btn {
+      background-color: #fff;
+      color: #000;
+  }
+
+  /* Disable hover jumping on mobile */
+  .service-card.appear:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+  }
+}
+
+
+
+/* Portfolio Section Container */
+.portfolio {
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding-bottom: 5rem;
+}
+
+.portfolio__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows cards to wrap to next line */
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Individual Card Styling */
+.portfolio__card {
+  margin: 1rem;
+  width: calc(33.33% - 2rem);
+  display: flex;
+  flex-direction: column;
+  background-color: #181818;
+  border-radius: 15px;
+  padding: 0 10px 20px 10px;
+  color: #fff;
+  /* Initial state for the fade-up */
+  opacity: 0;
+  transform: translateY(30px) scale(1); /* Combined initial state */
+  
+  /* Transition handles EVERYTHING: the fade-in, the slide-up, AND the hover-scale */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-out;
+}
+
+.portfolio__card.appear {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.portfolio__card.appear:hover {
+  color: #000;
+  transform: translateY(-10px) scale(1.075); /* Added a slight lift for extra polish */
+}
+
+/* Video Container Fix */
+.portfolio__card__videocontainer {
+  position: relative;
+  padding-top: 56.25%; /* Forces 16:9 Aspect Ratio */
+  width: 100%;
+  overflow: hidden;
+  margin: 15px 0;
+  border-radius: 12px;
+  background-color: #000;
+}
+
+.portfolio__card__videocontainer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Forces video to fill the 16:9 box perfectly */
+}
+
+
+.portfolio__card:nth-child(1):hover { background-color: #49bee8; }
+.portfolio__card:nth-child(2):hover { background-color: #dbe65f; }
+.portfolio__card:nth-child(3):hover { background-color: #f57878; }
+.portfolio__card:nth-child(4):hover { background-color: #78f5ad; }
+
+/* Responsive Breakpoints */
+
+/* Tablet: 2 Columns */
+@media screen and (max-width: 1100px) {
+  .portfolio__card {
+    width: calc(50% - 2rem);
+  }
+}
+
+/* Mobile View: 1 column */
+@media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
+  .portfolio__card {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  /* This applies the 'Hover' look as the default 'Appear' look on Mobile */
+  .portfolio__card.appear {
+    opacity: 1;
+    /* We apply the slight lift (translateY) and the zoom (scale) here */
+    transform: translateY(-5px) scale(1.02); 
+    color: #000;
+  }
+
+  /* Make sure the background colors are active on mobile too */
+  .portfolio__card:nth-child(1) { background-color: #49bee8; }
+  .portfolio__card:nth-child(2) { background-color: #dbe65f; }
+  .portfolio__card:nth-child(3) { background-color: #f57878; }
+  .portfolio__card:nth-child(4) { background-color: #78f5ad; }
+
+  /* Disable any further hover transformations to prevent 'sticky' taps */
+  .portfolio__card.appear:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+  }
+}
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Main CSS */
+.about {
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding-bottom: 5rem;
+}
+
+/* Replace your individual section h1 styles with this */
+.section-header {
+  font-size: clamp(3rem, 12vw, 10rem); /* Responsive: Min 3rem, Max 10rem */
+  text-align: center;
+  line-height: 1;
+  color: #fff;
+  margin-top: 100px; /* Consistent spacing from the section above */
+  margin-bottom: 20px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.about__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 2200px;
+}
+
+.about__container img{
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* About Page CSS */
+
+.text-wrap-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.picture__container {
+    /* This is the magic part */
+    float: right; 
+    margin-left: 40px;  /* Space between image and text */
+    margin-bottom: -20px; /* Space before text wraps underneath */
+}
+
+.picture__container img {
+    width: 400px;        /* Adjust size as needed */
+    height: 550px;       /* Fixed height for the "zoom" window */
+    object-fit: cover;   /* Keeps the zoom centered */
+    border-radius: 20px;
+}
+
+.paragraph__text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    font-family: sans-serif; /* Or your preferred readable font */
+}
+
+/* Clearfix: Ensures the container expands to fit the floated image */
+.text-wrap-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Mobile: Stack them normally so it doesn't look cramped */
+@media screen and (max-width: 768px) {
+    .picture__container {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 30px;
+        text-align: center;
+        align-self: center;
+        margin: 0;
+    }
+    .picture__container img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 0;
+    }
+}
+
+.about__container{
+  color: #fff;
+  font-size: 10rem;
+  text-align: left;
+}
+
+.text-wrap-container p {
+    text-indent: 40px;   /* The indent size */
+    margin-bottom: 20px; /* Adds space between the paragraphs */
+    text-align: left;    /* Ensures the indent starts from the left */
+}
+
+.text-wrap-container h1 {
+    text-align: center;    
+}
+
+/* Footer CSS */
+.footer__container {
+  background-color: #141414;
+  padding: 4rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer__logo {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.footer__links {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__link--wrapper {
+  display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+.footer__link--items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 30px;
+  margin: 0;
+}
+
+.footer__link--items h2 {
+  margin-bottom: 16px;
+}
+
+.footer__link--items > h2 {
+  color: #fff;
+}
+
+.footer__link--items a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.footer__link--items a:hover {
+  color: #e9e9e9;
+  transition: 0.3s ease-out;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__links {
+    padding-top: 2rem;
+    width: 100%;
+  }
+
+  /* Stacks the link columns vertically */
+  .footer__link--wrapper {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .footer__link--items {
+    margin: 0;
+    padding: 15px; /* Tighter padding for mobile */
+    width: 100%;
+    align-items: center; /* Centers text/links */
+    text-align: center;
+  }
+
+  /* Reduces gap between logo and social icons on mobile */
+  .social__media--wrap {
+    flex-direction: column;
+    gap: 40px; 
+    margin-top: 2rem;
+  }
+
+  .social__icons {
+    padding-top: 10px;
+  }
+}
+
+
+/* Social Icons */
+.social__icon--link {
+  color: #fff;
+  font-size: 24px;
+}
+
+.youtube-icon-style,
+.instagram-icon-style {
+  width: 30px;
+  height: 30px;
+}
+
+
+.social__media {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.social__media--wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 0 auto;
+}
+
+.social__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  gap: 20px;
+}
+
+.social__logo {
+  color: #fff;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.website__rights {
+  color: #fff;
+}
+
+@media screen and (max-width: 820px) {
+  .footer__links {
+    padding-top: 2rem;
+    width: 100%;
+  }
+
+  #footer__logo {
+    margin-bottom: 2rem;
+  }
+
+  .website__rights {
+    margin-bottom: 2rem;
+  }
+
+  .footer__link--wrapper {
+    flex-direction: column;
+  }
+
+  .social__media--wrap {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__link--items {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/* --- Desktop Footer & Social Media --- */
+.footer__container {
+  background-color: #141414;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__links {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__link--wrapper {
+  display: flex;
+  flex-direction: row; /* Horizontal on desktop */
+}
+
+.footer__link--items {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.social__media--wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; /* Space between Logo, Rights, and Icons */
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+.social__icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- Mobile Specific Styles (768px and below) --- */
+@media screen and (max-width: 768px) {
+  /* 1. Stack the About/Portfolio/Contact links */
+  .footer__link--wrapper {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__link--items {
+    display: flex;
+    justify-content: center;
+    padding: 10px; /* Tighter vertical spacing */
+    width: 100%;
+  }
+
+  .footer__link--items a {
+    text-align: center;   /* Double-down on centering the text itself */
+    width: 100%;
+  }
+
+  /* 2. Stack the Social Section (Logo, Rights, Icons) */
+  .social__media--wrap {
+    flex-direction: column;
+    gap: 25px; /* Vertical gap between items */
+    text-align: center;
+    text-align: center;
+  }
+
+  /* 3. Center social icons and ensure they don't wrap weirdly */
+  .social__icons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #footer__logo {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+  .website__rights {
+    font-size: 0.9rem; /* Slightly smaller text for mobile */
+    margin: 0;
+  }
+}
+
+/* --- Found Section --- */
+.found {
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding-bottom: 5rem;
+}
+
+.found-description {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #fff;
+  max-width: 900px;
+  text-align: center;
+  margin: 20px auto 40px auto;
+  padding: 0 20px;
+}
+
+.found__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- THE UPDATED 4-COLUMN CARD --- */
+.found__card {
+  margin: 0.5rem; /* Slightly smaller margins to fit 4 across */
+  height: auto;
+  width: calc(25% - 1rem); /* 25% for 4 columns */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 15px;
+  position: relative;
+  color: #fff;
+  background-color: #181818;
+  padding: 0 10px 20px 10px;
+
+  /* Initial State */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.found__card.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.found__card.appear:hover {
+  transform: translateY(-10px) scale(1.05);
+  z-index: 10;
+  color: #000;
+}
+
+/* Restoring the Button CSS */
+.card__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #f77062; /* Or your preferred button color */
+  color: #fff;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.card__button:hover {
+  background: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+/* Hover Background Colors */
+.found__card:nth-child(1):hover { background-color: #49bee8; }
+.found__card:nth-child(2):hover { background-color: #dbe65f; }
+.found__card:nth-child(3):hover { background-color: #f57878; }
+.found__card:nth-child(4):hover { background-color: #78f5ad; }
+
+.found__card h2 {
+  margin: 15px 0 5px 10px;
+  font-size: 1.5rem; /* Slightly smaller to fit 4-column layout */
+}
+
+/* Video Container */
+.found__card__videocontainer {
+  position: relative;
+  padding-top: 125%; 
+  width: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+  border-radius: 15px;
+  background: #000;
+}
+
+.found__card__videocontainer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Original Button Styles --- */
+.card__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 40px;
+  width: 80px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #fff; 
+  color: #000;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.card__button:hover {
+  background: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet View: 2 columns */
+@media screen and (max-width: 1100px) {
+  .found__card {
+    width: calc(50% - 1rem);
+  }
+}
+
+/* Mobile View: 1 column */
+@media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
+  .found__card {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  /* This applies the 'Hover' look as the default 'Appear' look on Mobile */
+  .found__card.appear {
+    opacity: 1;
+    /* We apply the slight lift (translateY) and the zoom (scale) here */
+    transform: translateY(-5px) scale(1.02); 
+    color: #000;
+  }
+
+  /* Make sure the background colors are active on mobile too */
+  .found__card:nth-child(1) { background-color: #49bee8; }
+  .found__card:nth-child(2) { background-color: #dbe65f; }
+  .found__card:nth-child(3) { background-color: #f57878; }
+  .found__card:nth-child(4) { background-color: #78f5ad; }
+
+  /* Disable any further hover transformations to prevent 'sticky' taps */
+  .found__card.appear:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+  }
+}
+}
+
+
+
+
+  /* Contact Page */
+/* Ensure the parent section is a column flexbox */
+.Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the H1 horizontally */
+  width: 100%;
+  background: #141414;
+}
+
+/* Replace your individual section h1 styles with this */
+.section-header {
+  font-size: clamp(3rem, 12vw, 10rem); /* Responsive: Min 3rem, Max 10rem */
+  text-align: center;
+  line-height: 1;
+  color: #fff;
+  margin-top: 100px; /* Consistent spacing from the section above */
+  margin-bottom: 20px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+
+/* Modify the container to sit BELOW the H1 */
+.contact__container {
+    width: 100%;
+    max-width: 1300px; /* Keep it consistent with your navbar */
+    height: auto;      /* Changed from 100vh to avoid awkward spacing */
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row; /* Form and Image side-by-side */
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Left Column (Form) */
+
+.contact__right img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.contact__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.contact__left__title h2 {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact__left__title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.contact__inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #000000;
+    border-radius: 50px;
+}
+
+.contact__inputs:focus {
+    border: 2px solid #803232;
+}
+
+.contact__inputs::placeholder {
+    color: #4f4f4f;
+}
+
+/* Specific styling for the Message box */
+.contact__left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+/* Submit Button */
+.contact__left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #000000;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ffffff, #ffffff);
+    cursor: pointer;
+}
+
+.contact__left button img {
+    height: 15px;
+}
+
+/* Right Column (Image) */
+.contact__right img {
+    width: 500px;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 800px) {
+    .contact__inputs {
+        width: 80vw;
+    }
+    .contact__right {
+        display: none; /* Hides image on mobile */
+    }
+}
+
+
+
+
+
