@@ -103,7 +103,7 @@ nav.navbar.scrolling {
   box-shadow: 0 4px 8px rgba(130, 130, 130, 0.4) ;
   
   /* Reset the 60% width that was causing visual confusion */
-  width: 95% ; 
+  width: fit-content; 
   max-width: 600px;
   margin: 0 auto;
   padding: 0%;
@@ -1627,3 +1627,87 @@ nav.navbar.scrolling .button{
 }
 
 
+@media screen and (max-width: 768px) {
+    /* 1. Global Reset: Stop the 'Black Bar' shaking */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    .main {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 2. Navbar Fix: The "Pill" containment */
+    nav.navbar.scrolling {
+        width: 90% !important;
+        max-width: 400px;
+        height: auto !important;
+        min-height: 60px;
+        margin: 10px auto !important;
+        left: 5%; /* Centers the 90% width pill */
+        padding: 0 !important;
+    }
+
+    nav.navbar.scrolling .navbar__container {
+        padding: 0 15px !important;
+        width: 100% !important;
+        justify-content: space-between !important;
+        height: 60px;
+    }
+
+    /* 3. Video Fix: Kill the internal scrollbar */
+    .recent_vid--container {
+        height: 100dvh !important;
+        overflow: hidden !important;
+    }
+
+    #recent__vid {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover;
+        pointer-events: none;
+    }
+
+    /* 4. Mission Image: Force Center */
+    .mission_pic_container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 30px 0 !important;
+        float: none !important; /* Prevents text-wrap issues on mobile */
+    }
+
+    .mission_pic_container img {
+        width: 85% !important;
+        max-width: 500px;
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+
+    /* 5. Typography & UI Fixes */
+    .section-header {
+        font-size: clamp(2.5rem, 12vw, 5rem);
+        word-wrap: break-word;
+    }
+
+    /* Disable custom cursor on mobile to prevent 'ghost' elements */
+    .custom_cursor {
+        display: none !important;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+
+    /* 6. Sticky Hover Reset: Prevent black unreadable text on tap */
+    .service-card.appear, 
+    .portfolio__card.appear, 
+    .found__card.appear {
+        color: #fff !important;
+        transform: translateY(-5px) scale(1.02) !important;
+    }
+}
