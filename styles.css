@@ -582,25 +582,27 @@ nav.navbar.scrolling .button{
     justify-content: center; /* Centers horizontally */
     align-items: center;     /* Centers vertically */
     width: 90%; 
-    max-width: 300px;            
+    max-width: 500px;            
     height: auto;
-    display: block;
-    margin: 0 auto         /* Adds space above and below the image */
+    margin: 40px auto;         /* Adds space above and below the image */
+    overflow: hidden
 }
 
 /* 2. Control the image size */
 .mission_pic_container img {
+    width: 90%;
     max-width: 500px;            /* Set your desired size here */
     height: auto;
     border-radius: 20px;     /* Optional: matches your navbar style */
+    display: block;
+    margin: 0 auto;
 }
 
 /* 3. Center the mission text below it */
 .mission h1 {
     text-align: center;
     width: 100%;
-    padding: 0 20px;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 
 /* =========================================
@@ -746,6 +748,10 @@ nav.navbar.scrolling .button{
     width: 100%;
     margin: 1rem 0;
     opacity: 0; /* Still starts hidden */
+  }
+
+  .mission_pic_container{
+    max-width: 300px;
   }
 
   /* "Appear" state on mobile acts as the "Hovered" state */
