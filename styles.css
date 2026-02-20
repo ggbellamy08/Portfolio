@@ -1628,86 +1628,92 @@ nav.navbar.scrolling .button{
 
 
 @media screen and (max-width: 768px) {
-    /* 1. Global Reset: Stop the 'Black Bar' shaking */
+    /* --- 1. THE FOUNDATION --- */
     html, body {
-        overflow-x: hidden;
-        width: 100%;
+        overflow-x: hidden !important; /* Prevent black bars */
+        width: 100vw;
         position: relative;
     }
 
-    .main {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    /* 2. Navbar Fix: The "Pill" containment */
+    /* --- 2. THE NAVBAR (STAYING PUT) --- */
     nav.navbar.scrolling {
-        width: 90% !important;
-        max-width: 400px;
-        height: auto !important;
-        min-height: 60px;
-        margin: 10px auto !important;
-        left: 5%; /* Centers the 90% width pill */
-        padding: 0 !important;
+        position: fixed !important; /* Fixed forces it to stay on screen regardless of parents */
+        top: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* The ONLY way to perfectly center a fixed element */
+        width: 90% !important; /* Smaller width for a cleaner "pill" look */
+        max-width: 400px !important;
+        height: 60px !important;
+        z-index: 99999 !important;
+        border-radius: 50px !important;
+        margin: 0 !important;
     }
 
-    nav.navbar.scrolling .navbar__container {
-        padding: 0 15px !important;
-        width: 100% !important;
-        justify-content: space-between !important;
-        height: 60px;
-    }
-
-    /* 3. Video Fix: Kill the internal scrollbar */
-    .recent_vid--container {
-        height: 100dvh !important;
-        overflow: hidden !important;
-    }
-
-    #recent__vid {
-        height: 100% !important;
-        width: 100% !important;
-        object-fit: cover;
-        pointer-events: none;
-    }
-
-    /* 4. Mission Image: Force Center */
-    .mission_pic_container {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
-        margin: 30px 0 !important;
-        float: none !important; /* Prevents text-wrap issues on mobile */
-    }
-
-    .mission_pic_container img {
-        width: 85% !important;
-        max-width: 500px;
-        height: auto !important;
-        margin: 0 auto !important;
-    }
-
-    /* 5. Typography & UI Fixes */
-    .section-header {
-        font-size: clamp(2.5rem, 12vw, 5rem);
-        word-wrap: break-word;
-    }
-
-    /* Disable custom cursor on mobile to prevent 'ghost' elements */
-    .custom_cursor {
+    /* Hide the logo on scroll as requested */
+    nav.navbar.scrolling #navbar__logo,
+    nav.navbar.scrolling .logo-text {
         display: none !important;
     }
 
-    * {
-        cursor: auto !important;
+    nav.navbar.scrolling .navbar__container {
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important; /* Centers the button perfectly in the pill */
+        align-items: center !important;
+        height: 100% !important;
     }
 
-    /* 6. Sticky Hover Reset: Prevent black unreadable text on tap */
-    .service-card.appear, 
-    .portfolio__card.appear, 
-    .found__card.appear {
-        color: #fff !important;
-        transform: translateY(-5px) scale(1.02) !important;
+    nav.navbar.scrolling .navbar__btn {
+        width: auto !important;
+        margin: 0 !important;
     }
+
+    nav.navbar.scrolling .button {
+        padding: 10px 25px !important;
+        border-radius: 25px !important;
+    }
+
+    /* --- 3. THE MISSION PICTURE (CENTERED) --- */
+    .mission_pic_container {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+     width: 100% !important;
+     max-width: 100% !important;
+     margin: 40px 0 !important;
+      padding: 0 !important;
+      float: none !important; /* Kills the desktop float: right */
+     clear: both !important;
+}
+
+/* Ensure the image itself doesn't have any weird offsets */
+    .mission_pic_container img {
+      display: block !important;
+      margin: 0 auto !important; /* Forces the auto-margin calculation */
+      width: 85% !important;
+      max-width: 400px !important;
+      height: auto !important;
+      transform: none !important; /* Clears any desktop animations */
+      position: static !important; /* Ensures it's not being shifted by top/left */
+}
+
+    /* --- 4. THE VIDEO (NO SCROLLBARS) --- */
+    .recent_vid--container {
+        width: 100% !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+
+    #recent__vid {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* --- 5. CLEANUP --- */
+    .custom_cursor { display: none !important; }
+    * { cursor: auto !important; }
 }
