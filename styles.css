@@ -863,6 +863,12 @@ nav.navbar.scrolling .button{
 .portfolio__card:nth-child(4):hover { background-color: #78f5ad; }
 .portfolio__card:nth-child(5):hover { background-color: #d978f5; }
 .portfolio__card:nth-child(6):hover { background-color: #f59978; }
+.portfolio__card:nth-child(7):hover { background-color: #49bee8; }
+.portfolio__card:nth-child(8):hover { background-color: #dbe65f; }
+.portfolio__card:nth-child(9):hover { background-color: #f57878; }
+.portfolio__card:nth-child(10):hover { background-color: #78f5ad; }
+.portfolio__card:nth-child(11):hover { background-color: #d978f5; }
+.portfolio__card:nth-child(12):hover { background-color: #f59978; }
 
 
 /* Responsive Breakpoints */
